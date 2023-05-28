@@ -8,8 +8,14 @@ import "./Button.css";
   /* bez btn2 bez barvy props.color, kdyz to budu volat props.color={red} */
 }
 const Button = (props) => {
+  const { color, backgroundColor } = props;
+
+  const styles = {
+    color: color,
+    backgroundColor: backgroundColor,
+  };
   return (
-    <button onClick={props.onClick} className="btn">
+    <button style={styles} onClick={props.onClick} className="btn">
       {props.children}
     </button>
   );

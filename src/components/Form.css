@@ -1,0 +1,16 @@
+.input-field {
+  height: 27px;
+  border: solid 1.5px #23527c;
+  margin: 2px;
+  border-radius: 3px;
+  text-align: center;
+}
+.container-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+.showWarning {
+  text-align: center;
+}
