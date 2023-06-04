@@ -38,10 +38,7 @@ function App() {
 
   return (
     <div>
-      <Text
-        titlePage="Databáze knih"
-        descriptionPage="Vyplňte prosím pole"
-      ></Text>
+      <Text titlePage="Databáze knih"></Text>
       <Form></Form>
 
       {error && <p>{error}</p>}

@@ -1,6 +1,10 @@
 .input-field {
   height: 27px;
-  border: solid 1.5px #23527c;
+  border-bottom: solid 2px #23527c;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: #f2f2f2;
   margin: 2px;
   border-radius: 3px;
   text-align: center;
@@ -26,15 +30,4 @@
 }
 .btn-submit:hover {
   background-color: #1867ad;
-}
-.no-spinners {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: textfield;
-}
-.no-spinners::-webkit-inner-spin-button,
-.no-spinners::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-  display: none;
 }
