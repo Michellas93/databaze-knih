@@ -35,9 +35,13 @@ function App() {
   const deleteBook = (id) => {
     projectFirestore.collection("books").doc(id).delete();
   };
+
   return (
     <div>
-      <Text></Text>
+      <Text
+        titlePage="Databáze knih"
+        descriptionPage="Vyplňte prosím pole"
+      ></Text>
       <Form></Form>
 
       {error && <p>{error}</p>}
@@ -62,9 +66,6 @@ function App() {
                   onClick={() => deleteBook(id)}
                 >
                   Smazat
-                </Button>
-                <Button color="white" backgroundColor="#337ab7">
-                  Edit
                 </Button>
               </div>
             </div>

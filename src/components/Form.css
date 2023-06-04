@@ -14,3 +14,27 @@
 .showWarning {
   text-align: center;
 }
+.btn-submit {
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: #337ab7;
+  color: white;
+}
+.btn-submit:hover {
+  background-color: #1867ad;
+}
+.no-spinners {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+.no-spinners::-webkit-inner-spin-button,
+.no-spinners::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  display: none;
+}

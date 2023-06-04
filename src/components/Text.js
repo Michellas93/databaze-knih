@@ -1,11 +1,11 @@
 import "./Text.css";
 import React from "react";
 
-const Text = () => {
+const Text = (props) => {
   return (
     <div>
-      <h1>Databáze knih</h1>
-      <h3>Vyplň všechny údaje a potvrď</h3>
+      <h1>{props.titlePage}</h1>
+      <h3>{props.descriptionPage}</h3>
     </div>
   );
 };

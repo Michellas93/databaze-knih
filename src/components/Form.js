@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { projectFirestore } from "../firebase/config";
 import "./Form.css";
-import Button from "./Button";
+import Input from "./Input";
 
 const Form = () => {
   const [error, setError] = useState(false);
@@ -16,6 +16,7 @@ const Form = () => {
   const submitForm = async (e) => {
     if (bookAuthor && bookPublish && bookTitle && bookPrice) {
       e.preventDefault();
+
       const oneBook = {
         title: bookTitle,
         author: bookAuthor,
@@ -40,45 +41,22 @@ const Form = () => {
     }
   };
 
+  // validace, vypise se mi hlaska podle toho co je v inputu, email nebo cena...
+  //Regex? co to je? jedna z moznosti pouzivani validace.
+
   return (
     <div>
       <form onSubmit={submitForm}>
         <div className="container-form">
-          <input
-            className="input-field"
-            type="text"
-            value={bookTitle}
-            onChange={(e) => setBookTitle(e.target.value)}
-            placeholder="Název knihy"
-          />
-          <input
-            className="input-field"
-            type="text"
-            value={bookAuthor}
-            onChange={(e) => setBookAuthor(e.target.value)}
-            placeholder="Autor"
-          />
-          <input
-            className="input-field"
-            type="text"
-            value={bookDescribe}
-            onChange={(e) => setBookDescribe(e.target.value)}
-            placeholder="popis"
-          />
-          <input
-            className="input-field"
-            type="text"
-            value={bookPrice}
-            onChange={(e) => setBookPrice(e.target.value)}
-            placeholder="cena"
-          />
-          <input
-            className="input-field"
-            type="text"
-            value={bookPublish}
-            onChange={(e) => setBookPublish(e.target.value)}
-            placeholder="Rok vydání"
-          />
+          <Input></Input>
+
+          <button
+            className="btn-submit"
+            disable={!bookAuthor || !bookPublish || !bookTitle || !bookPrice}
+            type="submit"
+          >
+            Submit
+          </button>
         </div>
         <div>
           {/* doprostred */}
@@ -87,15 +65,6 @@ const Form = () => {
               Vyplňte prosím pole.
             </p>
           )}
-
-          <Button
-            color="white"
-            backgroundColor="#337ab7"
-            disable={!bookAuthor || !bookPublish || !bookTitle || !bookPrice}
-            type="submit"
-          >
-            Submit
-          </Button>
         </div>
       </form>
     </div>
