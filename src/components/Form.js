@@ -33,6 +33,7 @@ const Form = () => {
       setBookPrice("");
       setShowWarning(false);
     } catch (err) {
+      setShowWarning(true);
       setError("Kniha nebyla přidána" + err.message);
     }
   };
@@ -86,7 +87,9 @@ const Form = () => {
         <div>
           {/* doprostred */}
           {showWarning && (
-            <p className="showWarning" style={{ color: "red" }}></p>
+            <p className="showWarning" style={{ color: "red" }}>
+              {error}
+            </p>
           )}
         </div>
       </form>
